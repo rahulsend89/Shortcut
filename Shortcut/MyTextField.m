@@ -13,5 +13,8 @@
     if([theEvent keyCode] == 125){
         [[NSApp delegate] keyUp:theEvent];
     }
+    if([theEvent keyCode]==36){
+        [[NSApp delegate] keyDown:theEvent];
+    }
 }
 @end

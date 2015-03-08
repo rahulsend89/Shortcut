@@ -77,7 +77,11 @@
     
     switch([theEvent keyCode]) {
         case 125: {
-            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+            int index = 0;
+            if([[searchField stringValue] length]>1){
+                index = 1;
+            }
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
             [myTable selectRowIndexes:indexSet byExtendingSelection:NO];
             [searchField resignFirstResponder];
             [[self window] makeFirstResponder:myTable];
@@ -88,7 +92,9 @@
 -(void)keyDown:(NSEvent*)event{
     if([event keyCode]==36){
         NSInteger rowIndex = [myTable selectedRow];
-        [self goToFile:[_dataarray objectAtIndex:rowIndex]];
+        if(rowIndex!=-1){
+            [self goToFile:[_dataarray objectAtIndex:rowIndex]];
+        }
     }
 }
 -(void)openWindow{
@@ -112,7 +118,8 @@
     [window close];
     [[NSWorkspace sharedWorkspace] openURL:obj.url];
     [searchField setStringValue:@""];
-    [self setDataarray:nil];
+    _dataarray = backUpData;
+    [myTable reloadData];
 }
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return [_dataarray count];
