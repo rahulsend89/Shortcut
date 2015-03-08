@@ -12,6 +12,12 @@
 		BE29D16719F2D7C500E2E4B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE29D16619F2D7C500E2E4B1 /* Images.xcassets */; };
 		BE29D16A19F2D7C500E2E4B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE29D16819F2D7C500E2E4B1 /* MainMenu.xib */; };
 		BE29D17619F2D7C500E2E4B1 /* ShortcutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE29D17519F2D7C500E2E4B1 /* ShortcutTests.m */; };
+		BE29D18119F2D7CF00E2E4B1 /* EBLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = BE29D18019F2D7CF00E2E4B1 /* EBLaunchServices.m */; };
+		BE4C4FEB1AAC80B9006B3B61 /* JFHotkeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4C4FEA1AAC80B9006B3B61 /* JFHotkeyManager.m */; };
+		BE4C4FEE1AAC812D006B3B61 /* NSEWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4C4FED1AAC812D006B3B61 /* NSEWindow.m */; };
+		BE4C4FF11AAC8533006B3B61 /* alternate_image.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4C4FEF1AAC8533006B3B61 /* alternate_image.png */; };
+		BE4C4FF21AAC8533006B3B61 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4C4FF01AAC8533006B3B61 /* image.png */; };
+		BE7F7C2819F554850075982B /* _star.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7F7C2719F554850075982B /* _star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,15 @@
 		BE29D16F19F2D7C500E2E4B1 /* ShortcutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortcutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE29D17419F2D7C500E2E4B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE29D17519F2D7C500E2E4B1 /* ShortcutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShortcutTests.m; sourceTree = "<group>"; };
+		BE29D17F19F2D7CF00E2E4B1 /* EBLaunchServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBLaunchServices.h; sourceTree = "<group>"; };
+		BE29D18019F2D7CF00E2E4B1 /* EBLaunchServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBLaunchServices.m; sourceTree = "<group>"; };
+		BE4C4FE91AAC80B9006B3B61 /* JFHotkeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFHotkeyManager.h; sourceTree = "<group>"; };
+		BE4C4FEA1AAC80B9006B3B61 /* JFHotkeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFHotkeyManager.m; sourceTree = "<group>"; };
+		BE4C4FEC1AAC812D006B3B61 /* NSEWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSEWindow.h; sourceTree = "<group>"; };
+		BE4C4FED1AAC812D006B3B61 /* NSEWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSEWindow.m; sourceTree = "<group>"; };
+		BE4C4FEF1AAC8533006B3B61 /* alternate_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alternate_image.png; sourceTree = "<group>"; };
+		BE4C4FF01AAC8533006B3B61 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		BE7F7C2719F554850075982B /* _star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _star.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +91,10 @@
 		BE29D15E19F2D7C500E2E4B1 /* Shortcut */ = {
 			isa = PBXGroup;
 			children = (
+				BE29D17F19F2D7CF00E2E4B1 /* EBLaunchServices.h */,
+				BE29D18019F2D7CF00E2E4B1 /* EBLaunchServices.m */,
+				BE4C4FEC1AAC812D006B3B61 /* NSEWindow.h */,
+				BE4C4FED1AAC812D006B3B61 /* NSEWindow.m */,
 				BE29D16319F2D7C500E2E4B1 /* AppDelegate.h */,
 				BE29D16419F2D7C500E2E4B1 /* AppDelegate.m */,
 				BE29D16619F2D7C500E2E4B1 /* Images.xcassets */,
@@ -88,6 +107,11 @@
 		BE29D15F19F2D7C500E2E4B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE4C4FE91AAC80B9006B3B61 /* JFHotkeyManager.h */,
+				BE4C4FEA1AAC80B9006B3B61 /* JFHotkeyManager.m */,
+				BE7F7C2719F554850075982B /* _star.png */,
+				BE4C4FEF1AAC8533006B3B61 /* alternate_image.png */,
+				BE4C4FF01AAC8533006B3B61 /* image.png */,
 				BE29D16019F2D7C500E2E4B1 /* Info.plist */,
 				BE29D16119F2D7C500E2E4B1 /* main.m */,
 			);
@@ -155,7 +179,7 @@
 		BE29D15419F2D7C500E2E4B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rahul Malik";
 				TargetAttributes = {
 					BE29D15B19F2D7C500E2E4B1 = {
@@ -191,8 +215,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4C4FF11AAC8533006B3B61 /* alternate_image.png in Resources */,
+				BE7F7C2819F554850075982B /* _star.png in Resources */,
 				BE29D16719F2D7C500E2E4B1 /* Images.xcassets in Resources */,
 				BE29D16A19F2D7C500E2E4B1 /* MainMenu.xib in Resources */,
+				BE4C4FF21AAC8533006B3B61 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4C4FEE1AAC812D006B3B61 /* NSEWindow.m in Sources */,
 				BE29D16519F2D7C500E2E4B1 /* AppDelegate.m in Sources */,
 				BE29D16219F2D7C500E2E4B1 /* main.m in Sources */,
+				BE29D18119F2D7CF00E2E4B1 /* EBLaunchServices.m in Sources */,
+				BE4C4FEB1AAC80B9006B3B61 /* JFHotkeyManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -315,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -325,9 +355,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Shortcut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -336,9 +368,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Shortcut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -398,6 +432,7 @@
 				BE29D17B19F2D7C500E2E4B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE29D17C19F2D7C500E2E4B1 /* Build configuration list for PBXNativeTarget "ShortcutTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +441,7 @@
 				BE29D17E19F2D7C500E2E4B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

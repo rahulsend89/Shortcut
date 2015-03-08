@@ -7,9 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
-@interface AppDelegate : NSObject <NSApplicationDelegate>
-
-
+#import "NSEWindow.h"
+@interface AppDelegate : NSObject <NSApplicationDelegate,NSTableViewDataSource,NSTableViewDelegate>{
+    IBOutlet NSTableView *myTable;
+    IBOutlet NSSearchField *searchField;
+    NSEWindow *window;
+    NSStatusItem *statusItem;
+    NSMutableArray *backUpData;
+}
+@property(nonatomic,strong)NSMutableArray *dataarray;
 @end
 
