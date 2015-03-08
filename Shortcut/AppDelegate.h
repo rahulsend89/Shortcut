@@ -14,6 +14,7 @@
     NSEWindow *window;
     NSStatusItem *statusItem;
     NSMutableArray *backUpData;
+    NSMutableArray *allCharsInSet;
 }
 @property(nonatomic,strong)NSMutableArray *dataarray;
 @end

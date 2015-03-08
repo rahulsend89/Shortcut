@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DF2EFF21-ABF3-4BD6-85CC-69476D5DC8B2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shortcut</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CEFAE872A19C592A54B9D6565D0B372F83EA2AFF</key>
+		<string>github.com:rahulsend89/Shortcut.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Shortcut.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CEFAE872A19C592A54B9D6565D0B372F83EA2AFF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:rahulsend89/Shortcut.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CEFAE872A19C592A54B9D6565D0B372F83EA2AFF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CEFAE872A19C592A54B9D6565D0B372F83EA2AFF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Shortcut</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -678,16 +678,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="359" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <searchField wantsLayer="YES" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-c7-bOU">
+                    <searchField wantsLayer="YES" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-c7-bOU" customClass="MyTextField">
                         <rect key="frame" x="63" y="309" width="235" height="22"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="predicate" usesSingleLineMode="YES" bezelStyle="round" id="jZh-IC-ZUh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
-                                <binding destination="Voe-Tx-rLC" name="predicate" keyPath="dataarray" id="byD-Dt-Ibm">
+                                <action selector="searchAction:" target="Voe-Tx-rLC" id="Gs6-ae-oJN"/>
+                                <binding destination="Voe-Tx-rLC" name="predicate" keyPath="dataarray" id="A0I-ob-LVA">
                                     <dictionary key="options">
-                                        <string key="NSDisplayName">predicate</string>
+                                        <string key="NSDisplayName">Search</string>
                                         <string key="NSPredicateFormat">name contains[cd] $value</string>
                                         <bool key="NSValidatesImmediately" value="YES"/>
                                     </dictionary>
@@ -697,12 +698,11 @@
                     </searchField>
                     <scrollView placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="185" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-hh-yxG">
                         <rect key="frame" x="0.0" y="0.0" width="361" height="304"/>
-                        <clipView key="contentView" id="gE2-7L-PDz">
+                        <clipView key="contentView" misplaced="YES" id="gE2-7L-PDz">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="Yk4-tz-3Pw" viewBased="YES" id="QtX-Em-KPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -754,7 +754,7 @@
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="8zb-Gg-VFH">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="8zb-Gg-VFH">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>

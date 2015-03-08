@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "EBLaunchServices.h"
 #import "JFHotkeyManager.h"
+
 @interface AppDelegate ()
 
 @property (assign) IBOutlet NSEWindow *window;
@@ -37,6 +38,10 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self reloadMycell];
     });
+    allCharsInSet = [[[NSMutableArray alloc] init] retain];
+    for (int count = 65; count<92; count++) {
+		[allCharsInSet addObject:[[NSString alloc] initWithFormat:@"%c",count]];
+	}    
 }
 -(void)setDataarray:(NSMutableArray *)dataarray{
     _dataarray = backUpData;
@@ -50,11 +55,47 @@
         [self goToFile:[_dataarray objectAtIndex:0]];
     }
     [myTable reloadData];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+    [myTable selectRowIndexes:indexSet byExtendingSelection:YES];
+    [searchField resignFirstResponder];
+    [myTable becomeFirstResponder];
+    [window selectNextKeyView:myTable];
+}
+-(void) mouseDown: (id) sender
+{
+    NSInteger rowIndex = [sender selectedRow];
+    [self goToFile:[_dataarray objectAtIndex:rowIndex]];
+}
+-(void)keyUp:(NSEvent*)theEvent{
+    if(![[[self window] firstResponder] isKindOfClass:[NSTextView class]]){
+        if([allCharsInSet containsObject:[[theEvent charactersIgnoringModifiers] uppercaseString]]){
+            [myTable resignFirstResponder];
+            [[self window] makeFirstResponder:searchField];
+        }
+        return;
+    }
+    
+    switch([theEvent keyCode]) {
+        case 125: {
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+            [myTable selectRowIndexes:indexSet byExtendingSelection:NO];
+            [searchField resignFirstResponder];
+            [[self window] makeFirstResponder:myTable];
+            break;
+        }
+    }
+}
+-(void)keyDown:(NSEvent*)event{
+    if([event keyCode]==36){
+        NSInteger rowIndex = [myTable selectedRow];
+        [self goToFile:[_dataarray objectAtIndex:rowIndex]];
+    }
 }
 -(void)openWindow{
     [NSApp activateIgnoringOtherApps:YES];
     [window makeKeyAndOrderFront:nil];
-    [searchField selectText:self];
+    [searchField selectText:@""];
+    [[self window] makeFirstResponder:searchField];
     [[searchField currentEditor] setSelectedRange:NSMakeRange([[searchField stringValue] length], 0)];
 }
 -(void)closeWindow{
@@ -68,23 +109,29 @@
     // Insert code here to tear down your application
 }
 - (void)goToFile:(EBLaunchServicesListItem*) obj {
-    if(![[searchField stringValue]length] == 0){
-        [window close];
-        [[NSWorkspace sharedWorkspace] openURL:obj.url];
-        [searchField setStringValue:@""];
-        [self setDataarray:nil];
-    }
+    [window close];
+    [[NSWorkspace sharedWorkspace] openURL:obj.url];
+    [searchField setStringValue:@""];
+    [self setDataarray:nil];
 }
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return [_dataarray count];
 }
 -(void)awakeFromNib{
+    [myTable setTarget:self];
+    [myTable setDoubleAction:@selector(mouseDown:)];
+    [myTable setNextResponder:self];
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setAction:@selector(openWindow)];
     [statusItem setHighlightMode:YES];
     [statusItem setImage:[NSImage imageNamed:@"image"]];
     [statusItem setAlternateImage:[NSImage imageNamed:@"alternate_image"]];
 }
+- (IBAction)searchAction:(id)sender {
+//        NSInteger rowIndex = [myTable selectedRow];
+//        [self goToFile:[_dataarray objectAtIndex:rowIndex]];
+}
+
 -(NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     NSString *identifier = [tableColumn identifier];
     if( [identifier isEqualToString:@"MainCell"] )
