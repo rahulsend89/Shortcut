@@ -672,20 +672,19 @@
         <window title="Shortcut" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="NSEWindow">
             <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="960" y="517" width="359" height="360"/>
+            <rect key="contentRect" x="960" y="517" width="261" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="359" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="261" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <searchField wantsLayer="YES" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-c7-bOU" customClass="MyTextField">
-                        <rect key="frame" x="63" y="309" width="235" height="22"/>
+                        <rect key="frame" x="13" y="314" width="235" height="22"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="predicate" usesSingleLineMode="YES" bezelStyle="round" id="jZh-IC-ZUh">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
-                                <action selector="searchAction:" target="Voe-Tx-rLC" id="Gs6-ae-oJN"/>
                                 <binding destination="Voe-Tx-rLC" name="predicate" keyPath="dataarray" id="A0I-ob-LVA">
                                     <dictionary key="options">
                                         <string key="NSDisplayName">Search</string>
@@ -696,20 +695,20 @@
                             </connections>
                         </searchFieldCell>
                     </searchField>
-                    <scrollView placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="185" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-hh-yxG">
-                        <rect key="frame" x="0.0" y="0.0" width="361" height="304"/>
+                    <scrollView misplaced="YES" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="185" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-hh-yxG">
+                        <rect key="frame" x="-1" y="5" width="263" height="304"/>
                         <clipView key="contentView" misplaced="YES" id="gE2-7L-PDz">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="Yk4-tz-3Pw" viewBased="YES" id="QtX-Em-KPW">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" headerView="Yk4-tz-3Pw" viewBased="YES" id="QtX-Em-KPW" customClass="MyTableView">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="MainCell" width="356.14453125" minWidth="40" maxWidth="1000" id="YDu-lt-EaB">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="awesome">
+                                        <tableColumn identifier="MainCell" width="258" minWidth="40" maxWidth="1000" id="YDu-lt-EaB">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -722,7 +721,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView identifier="MainCell" id="wJj-A7-6kV">
-                                                    <rect key="frame" x="1" y="1" width="356" height="20"/>
+                                                    <rect key="frame" x="1" y="1" width="258" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMR-zG-WWv">
@@ -750,7 +749,7 @@
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="qqK-FM-MkI">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qqK-FM-MkI">
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -772,7 +771,7 @@
                     <constraint firstItem="ixf-hh-yxG" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="fPz-CJ-DdK"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="269.5" y="371"/>
+            <point key="canvasLocation" x="257.5" y="358"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="PuP-dO-Y5L"/>
     </objects>

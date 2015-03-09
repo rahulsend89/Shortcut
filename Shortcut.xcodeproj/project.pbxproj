@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1BE40B1AADEB28005A79F6 /* MyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1BE40A1AADEB28005A79F6 /* MyTableView.m */; };
 		BE29D16219F2D7C500E2E4B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE29D16119F2D7C500E2E4B1 /* main.m */; };
 		BE29D16519F2D7C500E2E4B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE29D16419F2D7C500E2E4B1 /* AppDelegate.m */; };
 		BE29D16719F2D7C500E2E4B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE29D16619F2D7C500E2E4B1 /* Images.xcassets */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE1BE4091AADEB28005A79F6 /* MyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTableView.h; path = ../MyTableView.h; sourceTree = "<group>"; };
+		BE1BE40A1AADEB28005A79F6 /* MyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTableView.m; path = ../MyTableView.m; sourceTree = "<group>"; };
 		BE29D15C19F2D7C500E2E4B1 /* Shortcut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shortcut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE29D16019F2D7C500E2E4B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE29D16119F2D7C500E2E4B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				BE29D16419F2D7C500E2E4B1 /* AppDelegate.m */,
 				BE32F3A31AACB9F400D38508 /* MyTextField.h */,
 				BE32F3A41AACB9F400D38508 /* MyTextField.m */,
+				BE1BE4091AADEB28005A79F6 /* MyTableView.h */,
+				BE1BE40A1AADEB28005A79F6 /* MyTableView.m */,
 				BE29D16619F2D7C500E2E4B1 /* Images.xcassets */,
 				BE29D16819F2D7C500E2E4B1 /* MainMenu.xib */,
 				BE29D15F19F2D7C500E2E4B1 /* Supporting Files */,
@@ -246,6 +251,7 @@
 				BE29D16519F2D7C500E2E4B1 /* AppDelegate.m in Sources */,
 				BE29D16219F2D7C500E2E4B1 /* main.m in Sources */,
 				BE29D18119F2D7CF00E2E4B1 /* EBLaunchServices.m in Sources */,
+				BE1BE40B1AADEB28005A79F6 /* MyTableView.m in Sources */,
 				BE4C4FEB1AAC80B9006B3B61 /* JFHotkeyManager.m in Sources */,
 				BE32F3A51AACB9F400D38508 /* MyTextField.m in Sources */,
 			);

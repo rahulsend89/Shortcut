@@ -23,29 +23,38 @@
     [NSApp activateIgnoringOtherApps:YES];
     JFHotkeyManager *hkm = [[JFHotkeyManager alloc] init];
     [hkm bind:@"command shift space" target:self action:@selector(openWindow)];
-    [hkm bind:@"escape" target:self action:@selector(closeWindow)];
+    [self initVariable];
+    allCharsInSet = [[[NSMutableArray alloc] init] retain];
+    for (int count = 65; count<92; count++) {
+		[allCharsInSet addObject:[[NSString alloc] initWithFormat:@"%c",count]];
+	}    
+}
+-(void)initVariable{
+    //[hkm bind:@"escape" target:self action:@selector(closeWindow)];
     NSArray *ar = [EBLaunchServices allItemsFromList:kLSSharedFileListFavoriteItems];
     _dataarray = [[[NSMutableArray alloc] init] retain];
     for (EBLaunchServicesListItem*obj in ar) {
         if(![obj.name isEqualToString:@"AirDrop"] && ![obj.name isEqualToString:@"iCloud"] && ![obj.name isEqualToString:@"All My Files"]){
-            NSLog(@"obj : %@",obj.name);
             [_dataarray addObject:obj];
         }
     }
     backUpData = [[NSMutableArray arrayWithArray:_dataarray] retain];
     myTable.delegate = self;
     myTable.dataSource = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self reloadMycell];
     });
-    allCharsInSet = [[[NSMutableArray alloc] init] retain];
-    for (int count = 65; count<92; count++) {
-		[allCharsInSet addObject:[[NSString alloc] initWithFormat:@"%c",count]];
-	}    
 }
 -(void)setDataarray:(NSMutableArray *)dataarray{
     _dataarray = backUpData;
     if(!dataarray){
+        if([[[self window] firstResponder] isKindOfClass:[NSEWindow class]]){
+//            NSInteger rowIndex = [myTable selectedRow];
+//            if(rowIndex!=-1){
+//                [self goToFile:[_dataarray objectAtIndex:rowIndex]];
+//            }
+            [self closeWindow];
+        }
         [myTable reloadData];
         return;
     }
@@ -98,6 +107,7 @@
     }
 }
 -(void)openWindow{
+    [self initVariable];
     [NSApp activateIgnoringOtherApps:YES];
     [window makeKeyAndOrderFront:nil];
     [searchField selectText:@""];
@@ -110,6 +120,10 @@
 }
 -(void)reloadMycell{
     [myTable reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+        [myTable selectRowIndexes:indexSet byExtendingSelection:NO];
+    });
 }
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
@@ -124,20 +138,17 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return [_dataarray count];
 }
+
 -(void)awakeFromNib{
     [myTable setTarget:self];
     [myTable setDoubleAction:@selector(mouseDown:)];
-    [myTable setNextResponder:self];
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setAction:@selector(openWindow)];
     [statusItem setHighlightMode:YES];
     [statusItem setImage:[NSImage imageNamed:@"image"]];
     [statusItem setAlternateImage:[NSImage imageNamed:@"alternate_image"]];
 }
-- (IBAction)searchAction:(id)sender {
-//        NSInteger rowIndex = [myTable selectedRow];
-//        [self goToFile:[_dataarray objectAtIndex:rowIndex]];
-}
+
 
 -(NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     NSString *identifier = [tableColumn identifier];
