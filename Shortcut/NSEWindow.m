@@ -12,6 +12,7 @@
 @implementation NSEWindow
 
 -(BOOL)canBecomeKeyWindow{
+    
     return YES;
 }
 
