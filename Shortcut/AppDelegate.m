@@ -141,12 +141,25 @@
 
 -(void)awakeFromNib{
     [myTable setTarget:self];
+    NSImage *regularIcon = [NSImage imageNamed:@"image"];
+    NSImage *altIcon = [NSImage imageNamed:@"alternate_image"];
+    
+    // Check for AppKit Version, add support for darkmode if > 10.9
+    BOOL oldAppKitVersion = (floor(NSAppKitVersionNumber) <= 1265);
+    
+    if (!oldAppKitVersion)
+    {
+        // 10.10 or higher, add support to icon for auto detection of Regular/Dark mode
+        [regularIcon setTemplate:YES];
+        [altIcon setTemplate:YES];
+    }
+    
     [myTable setDoubleAction:@selector(mouseDown:)];
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
     [statusItem setAction:@selector(openWindow)];
     [statusItem setHighlightMode:YES];
-    [statusItem setImage:[NSImage imageNamed:@"image"]];
-    [statusItem setAlternateImage:[NSImage imageNamed:@"alternate_image"]];
+    [statusItem setImage:regularIcon];
+    [statusItem setAlternateImage:altIcon];
 }
 
 
